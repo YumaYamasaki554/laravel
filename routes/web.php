@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 認証用
+Auth::routes();
+
+// 商品一覧画面
+Route::get('/', 'ItemController@index');
+
+// 商品詳細画面
+Route::get('detail/{name}', 'ItemController@detail')->name('detail.show');
+
+
